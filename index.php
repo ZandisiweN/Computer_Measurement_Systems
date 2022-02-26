@@ -8,8 +8,7 @@
 <div class="container">
     <table class="table table-success table-striped">
         <thead>
-            <th>#</th>
-            <th> z1</th>
+            <th> Z1</th>
 
         </thead>
         <tbody>
