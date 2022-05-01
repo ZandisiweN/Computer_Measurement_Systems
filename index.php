@@ -8,7 +8,8 @@
 <div class="container">
     <table class="table table-success table-striped">
         <thead>
-            <th> Z1</th>
+            <th>#</th> 
+            <th>z1</th>
 
         </thead>
         <tbody>
@@ -18,7 +19,7 @@
             </tr>
             <tr>
                 <td>2</td>
-                <td><a href='./z1/task2.php'>Check For Host Status </a></td>
+                <td><a href='./z1/task2.php'> Host Status </a></td>
             </tr>
 
         </tbody>
@@ -37,12 +38,25 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td><a href='./z1/task1.php'>Check For Open Socket</a></td>
+                <td><a href='./z2/task1.php'>Geolocation</a></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><a href='./z1/task2.php'>Check For Host Status </a></td>
+                <td><a href='./z2/task2.php'>DNS </a></td>
             </tr>
+            <tr>
+                <td>3</td>
+                <td><a href='./z2/task3.php'>Test-Unix-time </a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href='./z2/task4.php'>Get Geo IP </a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href='./z2/task5.php'>Get User IP </a></td>
+            </tr>
+          
 
         </tbody>
     </table>
@@ -58,12 +72,9 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td><a href='./z3/task1.php'>Chat App</a></td>
+                <td><a href='./z3/index.php'>Chat App</a></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td><a href='./z1/task2.php'>Check For Host Status </a></td>
-            </tr>
+            
 
         </tbody>
     </table>

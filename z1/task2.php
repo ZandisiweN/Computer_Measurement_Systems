@@ -1,31 +1,25 @@
 <?php include '../partials/header.php' ?>
-<?php include '../helpers/db.php' ?>
+<?php 
+$dbhost="45.87.80.175"; $dbuser="u733134329_zandisiwendhlo"; $dbpassword="9V^qNn4s"; $dbname="u733134329_mydatabase";
+$conn = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
+if (!$conn) {
+echo " MySQL Connection error." . PHP_EOL;
+echo "Errno: " . mysqli_connect_errno() . PHP_EOL;
+echo "Error: " . mysqli_connect_error() . PHP_EOL;
+exit;
+}
+$result = mysqli_query($conn, "SELECT * FROM hosts") or die ("DB error: $dbname");
+print "<table class = table table-success table-striped>";
+print "<TR><TD>id</TD><TD>Address</TD><TD>Status</TD></TR>\n";
+while ($row = mysqli_fetch_array ($result)) {
+$id = $row[0];
+$address = $row[1];
+$port = 80;
+$fp = @fsockopen ($address,$port,$errno,$errstr, 30);
+if($fp){$info="ok";}else{$info="down";}
+print "<TR><TD>$id</TD><TD>$address</TD><TD>$info</TD></TR>\n";
+}
+print "</table>";
+mysqli_close($conn);
+?>
 
-<div class="container">
-  <h1 class="text-center mt-3 mb-5">List of hosts</h1>
-  <table class="table table-hover table-warning">
-    <thead class="table-primary">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">HOST</th>
-        <th scope="col">STATUS</th>
-        <th scope="col">ATTEMPTS</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php ?>
-      <?php foreach ($hosts as $i => $host) : ?>
-      <tr class="table-active">
-        <th scope="row"><?php echo $host['id'] ?></th>
-        <td><?php echo $host['address'] ?></td>
-        <td class="address"><?php $host['address'] ?></td>
-        <td class="attempts">0</td>
-      </tr>
-      <?php endforeach  ?>
-    </tbody>
-  </table>
-</div>
-
-
-
-<?php include '../partials/footer.php' ?>
